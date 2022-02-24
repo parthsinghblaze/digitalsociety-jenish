@@ -29,10 +29,9 @@ export const adminLoginFunction = (value) => {
         console.log(json);
         if (json.localId) {
           console.log("Yes local Id Founded");
+          localStorage.setItem("adminLogin", "true");
           dispatch(adminLogin());
         }
       });
   };
 };
-
-// AIzaSyAaGnp7Yo-aG8bZLne9f5f-B-hVtT6sIiA

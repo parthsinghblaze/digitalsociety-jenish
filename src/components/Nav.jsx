@@ -1,7 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Nav() {
+  const dispatch = useDispatch();
+
   return (
     <nav className="main-header navbar navbar-expand navbar-white navbar-light">
       {/* Left navbar links */}
@@ -21,6 +24,12 @@ function Nav() {
             Contact
           </a>
         </li>
+        <button
+          className="btn btn-danger"
+          onClick={() => dispatch({ type: "LOGOUT" })}
+        >
+          Logout
+        </button>
       </ul>
       {/* Right navbar links */}
       <ul className="navbar-nav ml-auto">

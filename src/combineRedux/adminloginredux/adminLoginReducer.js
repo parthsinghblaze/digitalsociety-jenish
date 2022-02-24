@@ -1,12 +1,15 @@
 import { ADMIN_LOGIN } from "./type";
 
-function checkingLocalStorage() {
-  return false;
+function getLocalStorage() {
+  let adminLogin = localStorage.getItem("adminLogin");
+  return adminLogin;
 }
 
 const intialState = {
-  isAdminLogin: checkingLocalStorage(),
+  isAdminLogin: getLocalStorage(),
 };
+
+console.log(typeof intialState.isAdminLogin);
 
 export const adminLoginReducer = (state = intialState, action) => {
   if (action.type === ADMIN_LOGIN) {
@@ -15,5 +18,13 @@ export const adminLoginReducer = (state = intialState, action) => {
       isAdminLogin: true,
     };
   }
+
+  if (action.type === "LOGOUT") {
+    return {
+      ...state,
+      isAdminLogin: localStorage.removeItem("adminLogin"),
+    };
+  }
+
   return state;
 };

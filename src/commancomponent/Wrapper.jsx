@@ -7,7 +7,7 @@ import Nav from "../components/Nav";
 function Wrapper({ children }) {
   const isAdminLogin = useSelector((state) => state.admin.isAdminLogin);
 
-  if (!isAdminLogin) {
+  if (!Boolean(isAdminLogin)) {
     return <Navigate to="/admin-login" />;
   }
 

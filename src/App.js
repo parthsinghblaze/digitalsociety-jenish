@@ -8,6 +8,7 @@ import Wrapper from "./commancomponent/Wrapper";
 import Home from "./pages/Home";
 import AddMember from "./pages/AddMember";
 import AdminLogin from "./pages/AdminLogin";
+import AllMembers from "./pages/AllMembers";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/add-members" element={<AddMember />} />
       <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/all-members" element={<AllMembers />} />
     </Routes>
   );
 }
